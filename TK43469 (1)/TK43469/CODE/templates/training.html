@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Black &mdash; Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+			<nav class="navbar navbar-default navbar-fixed-top js-fullheight">
+					<ul>
+						<li class="active"><a href="{{ url_for ('home') }}" style="color:white;">Home</a></li>
+						<li><a href="{{ url_for ('load') }}" style="color:white;">Load Dataset</a></li>
+						<li><a href="{{ url_for ('view') }}" style="color:white;">View Dataset</a></li>
+						<li><a href="{{ url_for ('training') }}" style="color:white;">Training</a></li>
+						<li><a href="{{ url_for ('prediction') }}" style="color:white;">Prediction</a></li>
+					</ul>
+
+			</nav>
+		</div>
+	</header>
+	<section id="fh5co-home" data-section="home" style="background-image: url(static/images/img7.jpg);" data-stellar-background-ratio="0.5">
+		<div class="row">
+					</div>
+	</section>
+
+
+<center>
+			<div class="col-md-8">
+			  {% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				  {% for category, message in messages %}
+					<div class="alert alert-{{ category }}">
+					  {{ msg }}
+					</div>
+				  {% endfor %}
+				{% endif %}
+			  {% endwith %}
+			  {% block content %}{% endblock %}
+			</div>
+		</center>
+
+<section id="main" class="wrapper style1">
+				<header class="major" style="width: 1000px; height: 150px;">
+					<h1 style="color:#003cff; background-color:black; position: absolute; top: 100px;margin-left: 700px;">TRAINING MODELS</h1>
+						{% if model is not defined %}
+							<br>
+							</h3>
+						{% endif %}
+				</header>
+
+
+  <div class="container">
+					<!-- Content -->
+						<section id="content">
+							<center>
+								<form action="{{ url_for('training') }}" method="post" style="position: absolute;bottom: 700px;margin-left: 350px;">
+									<h3 style="background-color:orange;"> {{ mag|safe }}</h3>
+
+									<label style="color:#ffffff; background-color:blue;" for="algo"><b>SELECT A MODEL:</b></label>
+
+									<select id="algo" name="algo" style="width: 40%;background-color:green;">
+										<option value="0">Select Model</option>
+									  	<option value="1">LINEAR REGRESSION</option>
+									  	<option value="2">RIDGE REGRESSION</option>
+										<option value="3">LASSO REGRESSION</option>
+										<option value="4">DECISION TREE REGRESSOR</option>
+										<option value="5">RANDOM FOREST REGRESSOR</option>
+									</select>
+									<br><br>
+									<input style="background-color:orange;" type="submit">
+								</form>
+							</center>
+						</section>
+
+
+
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  });
+</script>
+
+
+	
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="static/js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="static/js/main.js"></script>
+
+	</body>
+</html>
+

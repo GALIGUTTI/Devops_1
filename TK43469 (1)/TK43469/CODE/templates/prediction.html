@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Black &mdash; Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+					<ul>
+						<li class="active"><a href="/" style="color:white;">Home</a></li>
+						<li><a href="/load" style="color:white;">Load Dataset</a></li>
+						<li><a href="/view" style="color:white;">View Dataset</a></li>
+						<li><a href="/training" style="color:white;">Training</a></li>
+						<li><a href="/prediction" style="color:white;">Prediction</a></li>
+					</ul>
+
+			</nav>
+		</div>
+	</header>
+
+
+<section id="fh5co-home" data-section="home" style="background-image: url(static/images/img2.jpg);" data-stellar-background-ratio="0.5">
+		<div class="row">
+					</div>
+	</section>
+		<center>
+
+<section id="main" class="wrapper style1">
+				<header class="major" style="width: 1000px; height: 150px;">
+					<h1 style="color:#003cff; background-color:black; position: absolute; top: 100px;margin-left: 400px;">PREDICTION</h1>
+				<h3 style="color:#c3fe4f;background-color:black;position:absolute; top: 100px; left:250px; width: 1400px;height: 40px;margin-top: 0px;position: absolute;bottom: 600px;">PLEASE ENTER THE VALUE IN THE FOLLOWING FORM AND THE PREDICTION WILL BE DONE BY THE BEST PERFORMING MODEL.</h3>
+
+				<div class="container" style="border-spacing:10px; bottom: 1050px;">
+
+					<div class="section-container">
+
+						<!-- Add your site or app content here -->
+						{% if pred is not defined %}
+						<section id="content">
+							<center>
+								<form action="{{ url_for('prediction') }}" method="post" style="display:table">
+									<h3 style="position: absolute;bottom: 800px;right: 600px; color:#ff00ff; background-color:black;">{{mag|safe}}</h3>
+									<div class="row" >
+										<div class="column"></div>
+										<div class="row" style="position: absolute;bottom: 500px; left: 60px;font-size: large;">
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="JAN" style="display:table-cell">JAN :</label>
+												<input type="text" id="JAN" style="width: 80%;" name="JAN" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="FEB" style="display:table-cell">FEB:</label>
+												<input type="text" id="FEB" style="width: 80%;" name="FEB" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="MAR" style="display:table-cell">MAR :</label>
+												<input type="text" id="MAR" style="width: 80%;" name="MAR" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="APR" style="display:table-cell">APR:</label>
+												<input type="text" id="APR" style="width: 80%;" name="APR" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="MAY" style="display:table-cell">MAY:</label>
+												<input type="text" id="MAY" style="width: 80%;" name="MAY" value="">
+											</p>
+										</div>
+										<div class="column" style="position:absolute;bottom: 500px; left: 600px;font-size: large;">
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="JUN" style="display:table-cell">JUN :</label>
+												<input type="text" id="JUN" style="width: 80%;" name="JUN" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="JUL" style="display:table-cell">JUL :</label>
+												<input type="text" id="JUL" style="width: 80%;" name="JUL" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="AUG" style="display:table-cell">AUG:</label>
+												<input type="text" id="AUG" style="width: 80%;" name="AUG" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="SEP" style="display:table-cell">SEP :</label>
+												<input type="text" id="SEP" style="width: 80%;" name="SEP" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="OCT" style="display:table-cell">OCT :</label>
+												<input type="text" id="OCT" style="width: 80%;" name="OCT" value="">
+											</p>
+										</div>
+										<div class="column" style="position:absolute;bottom: 500px;left: 1200px;font-size: large;">
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="NOV" style="display:table-cell">NOV :</label>
+												<input type="text" id="NOV" style="width: 80%;" name="NOV" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="DEC" style="display:table-cell">DEC :</label>
+												<input type="text" id="DEC" style="width: 80%;" name="DEC" value="">
+											</p><br>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="DIVISION" style="display:table-cell">DIVISION:</label>
+												<input type="text" id="DIVISION" style="width: 80%;" name="DIVISION" value="">
+											</p>
+											<p style="display:table-row;color:#FF0000;background-color:black; ">
+												<label for="YEAR" style="display:table-cell">YEAR :</label>
+												<input type="text" id="YEAR" style="width: 80%;" name="YEAR" value="">
+											</p>
+										</div>
+										<input type="submit" value="Predict" style="margin-bottom: 350px; position: absolute;bottom: 30px; ">
+									</div><br>
+
+								</form>
+							</center>
+						</section>
+
+						{% endif %}
+					</div>
+
+
+
+					<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+     navActivePage();
+  });
+</script>
+
+
+	
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="static/js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="static/js/main.js"></script>
+				</div></header></section></center></body>
+</html>
+
