@@ -1,0 +1,111 @@
+if
+---
+
+if [cond]
+then
+----
+----
+else
+---
+---
+fi
+
+===============
+
+elif
+-----
+
+if [cond1]
+then 
+------
+------
+elif [cond2]
+-------
+-------
+elif [cond3]
+-------
+-------
+
+..
+...
+.....
+
+else
+......
+fi
+===============================================
+for
+---
+
+for varname in list
+do
+..........
+...........
+done
+ex:-
+
+for x in bhujji harinadh kiran ramya haseeb basha
+do
+useradd $x
+done
+
+
+=======================
+
+while loop
+-----------
+
+while [cond]
+do
+-----
+-----
+done
+
+while infinite loop
+--------------------
+
+while :
+or
+while true
+
+until loop
+------------
+until [cond]
+do
+-----
+-----
+done
+
+
+Functions
+------------
+
+function fun-name() {
+--------
+--------
+}
+
+
+case
+--------
+case $var in 
+pattern)
+--------------
+---------------
+;;
+pattern)
+----------
+-----------
+;;
+...
+...
+*)
+--------------
+-------------
+esac
+
+
+
+
+
+
