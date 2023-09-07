@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Black &mdash; Free Fully Responsive HTML5 Template by FREEHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!--
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE
+	DESIGNED & DEVELOPED by FREEHTML5.CO
+
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="static/css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="static/css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="static/css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="static/css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="static/css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="static/js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="static/js/respond.min.js"></script>
+	<![endif]-->
+
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+			<nav class="navbar navbar-default navbar-fixed-top js-fullheight">
+					<ul>
+						<li class="active"><a href="{{ url_for ('home') }}" style="color:white;">Home</a></li>
+						<li><a href="{{ url_for ('load') }}" style="color:white;">Load Dataset</a></li>
+						<li><a href="{{ url_for ('view') }}" style="color:white;">View Dataset</a></li>
+						<li><a href="{{ url_for ('training') }}" style="color:white;">Training</a></li>
+						<li><a href="{{ url_for ('prediction') }}" style="color:white;">Prediction</a></li>
+					</ul>
+
+			</nav>
+		</div>
+	</header>
+
+		<section id="fh5co-home" data-section="home" style="background-image: url(static/images/img4.jpg);" data-stellar-background-ratio="0.5">
+		<div class="row">
+					</div>
+		</section>
+
+
+	<center>
+		<div class="col-md-8">
+			{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+			{% for category, message in messages %}
+			<div class="alert alert-{{ category }}">
+				{{ message }}
+			</div>
+			{% endfor %}
+			{% endif %}
+			{% endwith %}
+			{% block content %}{% endblock %}
+		</div>
+	</center>
+
+	<!-- Main -->
+	<script>
+			$(document).ready(function() {
+				$('#mytable').DataTable( {
+					"pagingType": "full_numbers"
+				} );
+			} );
+		</script>
+
+	<section id="main" class="wrapper style1" style="left: 100px; padding-bottom: 0px !important; padding-top: 0px !important">
+
+		<center><section id="'content">
+
+			<form action="#" method="post" style="margin-bottom: 10px;padding: 0px;width: 500px;height: 100px;position:relative ;left: 50px;bottom: 800px;">
+
+				<h2 style="color:#fff100; background-color:skyblue;"><label for="df">VIEW YOUR DATASET: </label></h2>
+				<select id="df" name="df" style="width:50%; background-color: red;">
+					<option style="background-color: purple"; value="0">Select Data</option>
+					<option style="background-color: orange"; value="1">Train Data</option>
+					<option style="background-color: green"; value="2">Test Data</option>
+				</select><br><br>
+				<input type="submit">
+			</form>
+		</section>
+		</center>
+
+		</section>
+		{% if col is defined %}
+		<header class="major">
+			<h2>The Rainfall Data can be seen below</h2>
+			<!--
+
+            -->
+		</header>
+		<div class="container">
+
+			<!-- Content -->
+			<section id="content">
+				<div class="table-responsive" style="overflow-x:auto">
+					<table id='mytable' class="table table-sm table-borderless mb-0">
+						<thead class="thread-dark">
+						<tr>
+							<th>S/N</th>
+							{% for c in col %}
+							<th>{{ c }}</th>
+							{% endfor %}
+						</tr>
+						</thead>
+						<tbody>
+						{% for row in df %}
+						<tr>
+							<th scope="row">{{ loop.index }}</th>
+							{% for r in row %}
+							<td>{{ r }}</td>
+							{% endfor %}
+						</tr>
+						{% endfor %}
+						</tbody>
+
+
+					</table>
+
+
+				</div>
+			</section>
+
+		</div>
+		{% endif %}
+	</section>
+	</script>
+
+	<!-- <div id="map" class="fh5co-map"></div> -->
+
+	
+	<!-- jQuery -->
+	<script src="static/js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="static/js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="static/js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="static/js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="static/js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="static/js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="static/js/main.js"></script>
+
+	</body>
+</html>
+
